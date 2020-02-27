@@ -1,0 +1,19 @@
+# pamietac o uprawnieniach
+# chmod +x skrypt
+#!/bin/bash
+
+cd dane
+
+# ustawienie odpowiednich wartosci
+for i in {11..39}
+do
+    for j in {113..153}
+    do
+        # zmiana nazwy kontynentu
+        wget "https://dds.cr.usgs.gov/srtm/version2_1/SRTM3/Australia/S"$i"E"$j".hgt.zip"
+        unzip S"$i"E"$j".hgt.zip
+        rm S"$i"E"$j".hgt.zip
+    done
+done
+
+cd ..
